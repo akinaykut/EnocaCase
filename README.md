@@ -50,7 +50,7 @@ Bu işlemlerden sonra bizden parola isteyecek ve doğru girdiğimizde işlemimiz
 
 [Mvc Document](./MvcDocument/README.md)
 
-## 7- Apache Solr servisine yazılacak bir query örneği Apache Solr kullanılan sql programlarından daha farklı runtime bir database. Solr a hali hazırda kayıtlı bir alan olduğunu düşünelim. Alanın ismi “updatedAt” long tipinde tutulan bir alan. Ben 2020 Ocak ayından sonraki verileri getir dediğimde solr a nasıl bir query yazılmalı. http://example?query=kısmını nasıl doldurmalıyım?
+## 7- Apache Solr servisine yazılacak bir query örneği Apache Solr kullanılan sql programlarından daha farklı runtime bir database. Solr a hali hazırda kayıtlı bir alan olduğunu düşünelim. Alanın ismi “updatedAt” long tipinde tutulan bir alan. Ben 2020 Ocak ayından sonraki verileri getir dediğimde solr a nasıl bir query yazılmalı. http://example?query= kısmını nasıl doldurmalıyım?
 
 Daha önce Apache Solr sorgusu yazmamıştım. Solr dökümanını incelediğimde sorunu query'i filtrelereyek çözebileceğimi gördüm.
 Bunun için yapılması gereken query yerine filter query anlamına gelen "fq" komutunu kullanmak:
@@ -65,5 +65,7 @@ Eğer sorguyu devam ettirmek istersek, sorgu devamına &fq=condition şeklinde d
 
 
 ![err](./ScreenShot/err.PNG)
+##
 ![postman](./ScreenShot/enocaPostman.PNG)
+##
 [POSTMAN](./Enoca.postman_collection.json)
