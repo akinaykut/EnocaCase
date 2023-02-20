@@ -1,6 +1,8 @@
 package com.enoca.enocaCase.controller;
 
+import com.enoca.enocaCase.dto.request.SaveCompanyRequestDto;
 import com.enoca.enocaCase.dto.request.UpdateCompanyRequestDto;
+import com.enoca.enocaCase.dto.response.CompanyResponseDto;
 import com.enoca.enocaCase.entities.Company;
 import com.enoca.enocaCase.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +21,17 @@ public class CompanyController {
 
 
     @GetMapping
-    public ResponseEntity<List<Company>> getCompanies(){
+    public ResponseEntity<List<CompanyResponseDto>> getCompanies(){
         return new ResponseEntity<>(companyService.getCompanies(), HttpStatus.OK) ;
     }
 
     @PostMapping
-    public ResponseEntity<Company> saveCompany(@RequestBody Company company){
-       return new ResponseEntity<>(companyService.saveCompany(company), HttpStatus.OK);
+    public ResponseEntity<CompanyResponseDto> saveCompany(@RequestBody SaveCompanyRequestDto saveCompanyRequestDto){
+       return new ResponseEntity<>(companyService.saveCompany(saveCompanyRequestDto), HttpStatus.OK);
     }
 
     @PutMapping()
-    public ResponseEntity<Company> updateCompanyById(@RequestParam("companyId") Long companyId, @RequestBody UpdateCompanyRequestDto updateCompanyRequestDto){
+    public ResponseEntity<CompanyResponseDto> updateCompanyById(@RequestParam("companyId") Long companyId, @RequestBody UpdateCompanyRequestDto updateCompanyRequestDto){
        return new ResponseEntity<>(companyService.updateCompanyById(companyId, updateCompanyRequestDto), HttpStatus.OK);
     }
 
